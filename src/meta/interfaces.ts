@@ -15,7 +15,8 @@ export interface IRequestable {
     request( { headers, options, responseTimeout, transferTimeout }: sRequestConstructorArgs ): Promise<sTransfer>;
 }
 
-export interface IAgentPool<T> extends IRequestable{
+export interface IAgentPool<T> {
+    request(agent:IRequestable, args: sRequestConstructorArgs):Promise<sTransfer>;
     getNextAgent():Promise<T>;
     remove(agent:T):void;
 }

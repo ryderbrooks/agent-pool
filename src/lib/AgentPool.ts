@@ -18,13 +18,7 @@ export class AgentPool extends EventEmitter implements IAgentPool<IRequestable> 
     }
 
 
-    public async request( args: sRequestConstructorArgs ): Promise<sTransfer> {
-        let agent: IRequestable | undefined;
-        try {
-            agent = await this.pool.getNext();
-        } catch ( e ) {
-            throw e;
-        }
+    public async request(agent:IRequestable, args: sRequestConstructorArgs ): Promise<sTransfer> {
 
         return agent.request(args)
                     .then(( response: sTransfer ) => {
