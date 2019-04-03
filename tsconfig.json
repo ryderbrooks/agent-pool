@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+//    "noImplicitUseStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "strict": true,
+
+    "moduleResolution": "node",
+    "inlineSources": true,
+    "target": "ESNext",
+    "sourceMap": true,
+    "diagnostics": true,
+    "extendedDiagnostics": true,
+
+    "forceConsistentCasingInFileNames": true,
+
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "typeRoots": [
+      "./node_modules/@types"
+//      "./node_modules/typescript/lib/lib.esnext.full.d.ts"
+//      "./src/@types"
+    ],
+    "lib": ["esnext"]
+  },
+  "compileOnSave": true,
+  "include": [
+    "src/**/*"
+//    "dist/enums.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
