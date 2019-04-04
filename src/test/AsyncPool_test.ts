@@ -252,7 +252,7 @@ describe('AsyncPool', () => {
         assert.isBelow(firstWaitTime, maxWait);
     });
 
-    it('removes agent', async ()=>{
+    it.skip('removes agent', async ()=>{
         const maxAgents:number = 5;
         const loops:number = maxAgents + 10;
         const timeouts:number[] = [1];

@@ -1,20 +1,26 @@
 {
-  "name": "",
+  "name": "agent-pool",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha dist/test/index.js --exit"
+    "setup": "npm install",
+    "build": "tsc",
+    "test": "./node_modules/mocha/bin/mocha dist/test/ --exit",
+    "clean": "shx rm -rf node_modules/ dist/ docs/",
+    "typedoc": "typedoc",
+    "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ryderbrooks/agent-pool.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/ryderbrooks/agent-pool#readme",
   "bugs": {
-    "email": "",
-    "url": ""
+    "url": "https://github.com/ryderbrooks/agent-pool/issues"
   },
+  "files": ["dist/index.js", "dist/lib/*.js"],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -29,8 +35,10 @@
     "eslint-plugin-tslint": "^3.1.0",
     "eslint-plugin-typescript": "^0.12.0",
     "mocha": "^6.0.2",
+    "shx": "^0.3.2",
     "sinon": "^6.3.5",
     "tslint": "^5.14.0",
+    "typedoc": "^0.14.2",
     "typescript": "^3.3.4000",
     "typescript-eslint-parser": "^21.0.2",
     "typescript-estree": "^1.1.0"
