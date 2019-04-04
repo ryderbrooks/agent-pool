@@ -1,4 +1,6 @@
-language: node.js
+language: node_js
+node_js:
+  - "11"
 
 before_script:
   - npm run setup
