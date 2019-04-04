@@ -9,7 +9,7 @@ import { sRequestConstructorArgs, sTransfer } from '../meta/structs';
 describe('AgentPool', () => {
 
     function agentConstructor(): Promise<IRequestable> {
-        return new Promise<IRequestable>(( res: RES<IRequestable>, rej: REJ ): void => {
+        return new Promise<IRequestable>(( res: RES<IRequestable> ): void => {
             res({
                     request : ( args: sRequestConstructorArgs ): Promise<sTransfer> => {
                         return new Promise<sTransfer>(( res: RES<sTransfer>,
@@ -67,15 +67,15 @@ describe('AgentPool', () => {
                 tTotal += TO;
                 try {
                     const agent: IRequestable = await aPool.getNextAgent();
-                    const result: sTransfer   = aPool.request(agent, {
+                    aPool.request(agent, {
                         headers         : {
                             ':path' : path,
-                            'TO'    : TO,
+                            TO,
                         },
                         transferTimeout : 100,
                         responseTimeout : 200,
                         options         : {},
-                    }).catch((r)=>r);
+                    }).catch((r:any)=>r);
 
                 } catch ( e ) {
                 }
@@ -112,10 +112,10 @@ describe('AgentPool', () => {
                 try {
                     const agent: IRequestable = await aPool.getNextAgent();
 
-                    const result: sTransfer = aPool.request(agent, {
+                    aPool.request(agent, {
                         headers         : {
                             ':path' : path,
-                            'TO'    : TO,
+                             TO,
                         },
                         transferTimeout : 100,
                         responseTimeout : 200,

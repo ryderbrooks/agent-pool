@@ -88,6 +88,8 @@ describe('AsyncPool', () => {
         // loop to the maxAgent size the agent will be returned to the pool
         // before we can validate the queueing mechanism
 
+
+        // @ts-ignore
         const asyncPool: IAsyncPool<IFakeAgent> = new AsyncPool<IFakeAgent>(agentConstructor,
                                                                             maxAgents);
 
@@ -258,7 +260,7 @@ describe('AsyncPool', () => {
         const timeouts:number[] = [1];
         const action:any = [{reject: 'ok'}];
 
-        const stats:ILooperReturn =await looper(maxAgents,
+        await looper(maxAgents,
                                                 loops,
                                                 timeouts,
                                                 undefined,
