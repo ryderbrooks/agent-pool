@@ -27,18 +27,17 @@
     "declaration": true,
     "typeRoots": [
       "./node_modules/@types"
-//      "./node_modules/typescript/lib/lib.esnext.full.d.ts"
-//      "./src/@types"
     ],
     "lib": ["esnext"]
   },
   "compileOnSave": true,
   "include": [
     "src/**/*"
-//    "dist/enums.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "docs"
   ],
   "typedocOptions": {
     "mode": "modules",

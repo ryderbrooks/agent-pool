@@ -2,11 +2,11 @@
 .idea
 
 # Dependency directories
-node_modules/
+node_modules
 
 # Output of 'npm pack'
 *.tgz
 
 # IntelliJ
-/docs
+docs
 /dist

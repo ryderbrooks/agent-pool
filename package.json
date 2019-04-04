@@ -1,6 +1,6 @@
 {
   "name": "ragent-pool",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,6 +8,7 @@
     "setup": "npm install",
     "build": "tsc",
     "test": "./node_modules/mocha/bin/mocha dist/test/ --exit",
+    "cover": "istanbul cover node_modules/mocha/bin/mocha dist/test/*.js -- -R spec",
     "clean": "shx rm -rf node_modules/ dist/ docs/",
     "typedoc": "typedoc",
     "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
@@ -20,7 +21,11 @@
   "bugs": {
     "url": "https://github.com/ryderbrooks/agent-pool/issues"
   },
-  "files": ["dist/index.js", "dist/lib/*.js"],
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/lib/*.js"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -31,9 +36,11 @@
     "@types/sinon": "^5.0.7",
     "acorn": "^6.1.1",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
     "eslint": "^5.15.3",
     "eslint-plugin-tslint": "^3.1.0",
     "eslint-plugin-typescript": "^0.12.0",
+    "istanbul": "^0.4.5",
     "mocha": "^6.0.2",
     "shx": "^0.3.2",
     "sinon": "^6.3.5",
