@@ -249,8 +249,9 @@ describe('AsyncPool', () => {
 
         const firstWaitTime: number = stats.poolWaits[maxAgents];
         const minTimeout: number = Math.min(...stats.usedTimeouts);
+        const thresh: number = 20;
 
-        assert.isAbove(firstWaitTime, minTimeout);
+        assert.isAbove(firstWaitTime + thresh, minTimeout);
         assert.isBelow(firstWaitTime, maxWait);
     });
 
