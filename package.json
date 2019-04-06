@@ -49,5 +49,8 @@
     "typescript": "^3.3.4000",
     "typescript-eslint-parser": "^21.0.2",
     "typescript-estree": "^1.1.0"
+  },
+  "dependencies": {
+    "pop-set": "^0.0.4"
   }
 }

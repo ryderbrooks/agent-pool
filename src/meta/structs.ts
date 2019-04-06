@@ -24,6 +24,6 @@ export type sResponse = {
     };
 };
 
-export type sTransfer =
-    {body: Buffer}
-    & sResponse;
+export type sTransfer = sResponse & {
+    body: Buffer;
+};

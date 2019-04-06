@@ -1,7 +1,6 @@
-import { IAsyncPool, IPopSet }    from '../meta/interfaces';
+import { IAsyncPool }             from '../meta/interfaces';
 import { RES, tAgentConstructor } from '../meta/types';
-import { PopSet }                 from './PopSet';
-
+import { IPopSet, PopSet }        from 'pop-set';
 
 
 

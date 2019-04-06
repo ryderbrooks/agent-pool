@@ -4,10 +4,6 @@ import { sRequestConstructorArgs, sTransfer } from './structs';
 export interface IAsyncPool<T> {
 }
 
-export interface IPopSet<T> extends Set<T>{
-    pop():T;
-}
-
 
 export interface IRequestable {
     alpnProtocol?: string | undefined;
